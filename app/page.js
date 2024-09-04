@@ -1,95 +1,41 @@
-import Image from "next/image";
 import styles from "./page.module.css";
+import Quiz from "@/componets/Quiz/Quiz";
+const questions = [
+    {
+        question: "In CSS, which of these values CANNOT be used with the 'position' property?",
+        answers: [
+            { text: "static", isCorrect: false },
+            { text: "relative", isCorrect: false },
+            { text: "center", isCorrect: true },
+            { text: "absolute", isCorrect: false }
+        ]
+    },
+    {
+        question: "How long is an IPv6 address?",
+        answers: [
+            { text: "128 bits", isCorrect: true },
+            { text: "64 bits", isCorrect: false },
+            { text: "128 bytes", isCorrect: false },
+            { text: "32 bits", isCorrect: false }
+        ]
+    },
+    {
+        question: "In the server hosting industry IaaS stands for...",
+        answers: [
+            { text: "Infrastructure as a Service", isCorrect: true },
+            { text: "Internet and a Server", isCorrect: false },
+            { text: "Internet as a Service", isCorrect: false },
+            { text: "Infrastructure as a Server", isCorrect: false }
+        ]
+    }
+];
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
+    return (
         <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            <h1 className={styles.titleStyle}>Quiz</h1>
+            <Quiz questions={questions} />
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+    );
 }
+
